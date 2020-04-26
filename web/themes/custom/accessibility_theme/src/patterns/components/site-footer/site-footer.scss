@@ -1,0 +1,92 @@
+// Footer
+//
+// The main footer component.
+
+// Import site utilities.
+@import '../../global/utils/init';
+
+.site-footer {
+  padding: 60px 20px 20px;
+  background: $color-navy-blue;
+  color: $color-white;
+
+  a {
+    color: $color-white;
+  }
+}
+
+.site-footer__container {
+  margin: 0 auto;
+  max-width: $bp-lg;
+}
+
+.site-footer__content {
+
+  @include breakpoint($bp-sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .site-footer__bottom {
+    margin-bottom: 0;
+    width: 100%;
+
+    @include breakpoint($bp-md) {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.site-footer__logo,
+.site-footer__address,
+.site-footer__contact,
+.site-footer__social {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px;
+
+  @include breakpoint($bp-sm) {
+    flex: 0 0 45%;
+    justify-content: flex-start;
+  }
+
+  @include breakpoint($bp-lg) {
+    flex: 0 0 25%;
+    justify-content: flex-start;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+.site-footer__social {
+
+  .social-icons__list {
+    width: 85%;
+
+    @include breakpoint($bp-lg) {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint($bp-lg) {
+    align-items: flex-start;
+  }
+}
+
+.site-footer__logo {
+  margin-bottom: 40px;
+
+  .site-logo__icon {
+    fill: $color-white;
+  }
+}
+
+.site-footer__copyright {
+  font-size: 1.4rem;
+  text-align: center;
+}

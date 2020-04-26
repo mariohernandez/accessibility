@@ -4,21 +4,23 @@
 
 // Import site utilities.
 @import '../../global/utils/init';
+//lintsass-disable: selector-no-qualifying-type
 
-.button {
+.button,
+input[type='submit'] {
   background-color: $color-ocean-blue;
-  border: 1px solid transparent;
+  border: 3px solid transparent;
   border-radius: 0;
   color: $color-white;
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
   height: 50px;
-  padding: 10px 20px;
+  padding: 10px 40px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background-color $transition, color $transition;
+  transition: background-color $transition, color $transition, border-color $transition;
 
   &:hover,
   &:active,
@@ -27,9 +29,13 @@
     color: $color-white;
   }
 
-  &:disabled {
+  &.disabled {
     cursor: not-allowed;
     opacity: 0.5;
+  }
+
+  &.bad-contrast {
+    background-color: $color-blue-gray;
   }
 }
 

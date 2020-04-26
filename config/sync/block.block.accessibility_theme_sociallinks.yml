@@ -11,14 +11,14 @@ dependencies:
 id: accessibility_theme_sociallinks
 theme: accessibility_theme
 region: footer
-weight: -6
+weight: -3
 provider: null
 plugin: 'system_menu_block:social-links'
 settings:
   id: 'system_menu_block:social-links'
   label: 'Social Links'
   provider: system
-  label_display: visible
+  label_display: '0'
   level: 1
   depth: 0
   expand_all_items: false

@@ -3,32 +3,19 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.card.field_cta
     - field.field.paragraph.card.field_eyebrow
     - field.field.paragraph.card.field_image
     - field.field.paragraph.card.field_text
     - field.field.paragraph.card.field_title
+    - image.style.max_325x325
     - paragraphs.paragraphs_type.card
   module:
     - image
-    - link
 id: paragraph.card.default
 targetEntityType: paragraph
 bundle: card
 mode: default
 content:
-  field_cta:
-    weight: 4
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
   field_eyebrow:
     weight: 1
     label: hidden
@@ -41,7 +28,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: max_325x325
       image_link: ''
     third_party_settings: {  }
     type: image

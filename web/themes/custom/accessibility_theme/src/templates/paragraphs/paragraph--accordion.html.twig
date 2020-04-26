@@ -40,15 +40,6 @@
 #}
 {{ attach_library('accessibility_theme/accordion') }}
 
-{# Prints accordion section title. #}
-{# {%
-  include '@accessibility_theme/heading/heading.twig' with {
-    heading: {
-      title: content.field_title|render|trim is not empty ? content.field_title
-    }
-  } only
-%} #}
-
 {# Embeds accordion and its items. #}
 {% embed '@accessibility_theme/accordion/accordion.twig' with {
     heading: {
@@ -60,5 +51,5 @@
 
   {% block accordion_items %}
     {{ content.field_accordion_items }}
-  {% endblock accordion_items %}
+  {% endblock %}
 {% endembed %}

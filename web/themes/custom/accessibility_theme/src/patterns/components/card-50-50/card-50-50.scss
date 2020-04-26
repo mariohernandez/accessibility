@@ -1,0 +1,24 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+.card-50-50 {
+  @include component-wrapper;
+  @include component-space;
+
+  @include breakpoint($bp-sm) {
+    display: flex;
+  }
+}
+
+.card-50-50__media,
+.card-50-50__content {
+  flex: 1 1 50%;
+}
+
+.card-50-50__content {
+  margin-top: 20px;
+
+  @include breakpoint($bp-sm) {
+    padding-left: 40px;
+  }
+}

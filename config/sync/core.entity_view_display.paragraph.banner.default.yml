@@ -5,12 +5,14 @@ dependencies:
   config:
     - field.field.paragraph.banner.field_body
     - field.field.paragraph.banner.field_cta
+    - field.field.paragraph.banner.field_eyebrow
     - field.field.paragraph.banner.field_image
     - field.field.paragraph.banner.field_title
     - paragraphs.paragraphs_type.banner
+    - responsive_image.styles.16_9_max_1280px
   module:
-    - image
     - link
+    - responsive_image
     - text
 id: paragraph.banner.default
 targetEntityType: paragraph
@@ -18,14 +20,14 @@ bundle: banner
 mode: default
 content:
   field_body:
-    weight: 2
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_cta:
-    weight: 3
+    weight: 4
     label: hidden
     settings:
       trim_length: 80
@@ -34,19 +36,27 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    type: link_separate
     region: content
-  field_image:
+  field_eyebrow:
     weight: 1
     label: hidden
     settings:
-      image_style: ''
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      responsive_image_style: 16_9_max_1280px
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
     region: content
   field_title:
-    weight: 0
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false

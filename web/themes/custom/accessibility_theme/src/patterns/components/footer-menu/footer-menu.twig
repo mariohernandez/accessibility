@@ -1,8 +1,14 @@
+{{ attach_library('accessibility_theme/footer-menu') }}
 <nav class="footer-menu">
   <ul class="footer-menu__list">
   {% for item in items %}
     <li class="footer-menu__item">
-      <a class="footer-menu__link" href="{{ item.link }}">{{ item.text }}</a>
+      <a class="footer-menu__link" href="{{ item.url }}">
+        {{ item.title }}
+      </a>
+      {% if not loop.last %}
+        <span>|</span>
+      {% endif %}
     </li>
   {% endfor %}
   </ul>

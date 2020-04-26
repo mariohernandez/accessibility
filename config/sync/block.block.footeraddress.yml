@@ -1,0 +1,25 @@
+uuid: 639536e9-bb3e-4de4-8c0b-1018347a495f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:adff7920-c8c2-478b-80d2-2824f738006d'
+  module:
+    - block_content
+  theme:
+    - accessibility_theme
+id: footeraddress
+theme: accessibility_theme
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:adff7920-c8c2-478b-80d2-2824f738006d'
+settings:
+  id: 'block_content:adff7920-c8c2-478b-80d2-2824f738006d'
+  label: 'Footer Address'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

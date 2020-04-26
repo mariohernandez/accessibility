@@ -1,0 +1,58 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+.card-deck {
+  @include component-wrapper;
+  @include component-space;
+}
+
+.card-deck__title {
+  margin-bottom: 40px;
+}
+
+.card-deck__items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @include breakpoint($bp-xsm) {
+    justify-content: space-between;
+  }
+}
+
+.card-deck__inner {
+  @include breakpoint ($bp-md) {
+    margin-bottom: 3.2rem;
+  }
+
+  .heading {
+    text-align: center;
+  }
+}
+
+.card-deck__item {
+  margin-bottom: 2.4rem;
+
+  @include breakpoint($bp-xsm) {
+    flex: 0 0 200px;
+  }
+
+  @include breakpoint($bp-sm) {
+    width: inherit;
+    flex: 0 0 220px;
+  }
+
+  @include breakpoint($bp-md) {
+    width: inherit;
+    flex: 0 0 260px;
+  }
+}
+
+.card__media img {
+  margin: 0 auto;
+}
+
+.card-deck__cta--wrapper {
+  text-align: center;
+}
