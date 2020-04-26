@@ -1,4 +1,7 @@
 {
-  "text": "Button",
-  "modifier_class": ""
+  "button": {
+    "text": "Button",
+    "modifier": "",
+    "url": ""
+  }
 }

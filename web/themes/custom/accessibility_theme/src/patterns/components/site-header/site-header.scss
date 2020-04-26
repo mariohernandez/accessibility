@@ -1,0 +1,13 @@
+// Import site utilities.
+@import '../../global/utils/init';
+
+.site-header {
+  background-color: rgba($color-white, 0.6);
+}
+
+.site-header__inner {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}

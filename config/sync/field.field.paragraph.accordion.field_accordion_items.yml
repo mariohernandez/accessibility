@@ -1,0 +1,52 @@
+uuid: 1fc1d2bf-1f29-4d9d-bcba-9d0df62955a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_accordion_items
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.accordion_item
+  module:
+    - entity_reference_revisions
+id: paragraph.accordion.field_accordion_items
+field_name: field_accordion_items
+entity_type: paragraph
+bundle: accordion
+label: Questions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion_item: accordion_item
+    target_bundles_drag_drop:
+      '50_50':
+        weight: 8
+        enabled: false
+      accordion:
+        weight: 9
+        enabled: false
+      banner:
+        weight: 10
+        enabled: false
+      accordion_item:
+        enabled: true
+        weight: 11
+      card:
+        weight: 11
+        enabled: false
+      card_deck:
+        weight: 12
+        enabled: false
+      faq_item:
+        weight: 13
+        enabled: false
+      hero:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

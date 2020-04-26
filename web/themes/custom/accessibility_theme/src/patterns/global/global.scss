@@ -5,11 +5,6 @@
 // Only variables / mixins / settings.
 @import 'utils/init';
 
-// Import font-face fonts.
-//
-// This should only be imported and loaded once.
-@import 'fonts/fonts';
-
 // Base
 //
 // Plain html element styling. Shouldn't require
@@ -23,16 +18,8 @@
 // There should be NO classes, IDs, etc.
 //=======================================================
 
-// Sass Lint needs to ignore some Normalize specific things:
-// sass-lint:disable no-duplicate-properties, no-vendor-prefixes
-
-html {
-  @include font-stack-primary;
-  font-size: 100%;
-  line-height: 1.15;
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-}
+// StyleLint needs to ignore some Normalize specific things:
+/* stylelint-disable property-no-vendor-prefix */
 
 // https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 * {
@@ -44,19 +31,75 @@ html {
   }
 }
 
-// Sections.
+html {
+  @include font-stack-primary;
+  font-size: 62.5%;
+  line-height: 1.5;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
 
+// Sections.
 body {
+  color: $color-navy-blue;
+  font-size: 1.8rem;
+  font-weight: $font-weight-normal;
   margin: 0;
 }
 
-// Render the `main` element consistently in IE.
+a {
+  color: $color-ocean-blue;
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-navy-blue;
+  line-height: 1.2;
+  font-size: 1.25rem;
+  font-weight: $font-weight-bold;
+  margin: 0 0 1rem;
+}
+
+h5,
+h6 {
+  font-weight: $font-weight-normal;
+}
+
+h1 {
+  @include heading-1-style;
+}
+
+h2 {
+  @include heading-2-style;
+}
+
+h3 {
+  @include heading-3-style;
+}
+
+h4 {
+  @include heading-4-style;
+}
+
+h5 {
+  @include heading-5-style;
+}
+
+h6 {
+  @include heading-6-style;
+}
+
+// Render the `main` element consistently in IE11.
 main {
   display: block;
 }
 
 // Grouping content.
-
 hr {
   box-sizing: content-box;
   height: 0;
@@ -64,14 +107,15 @@ hr {
 }
 
 pre {
+  /* stylelint-disable-next-line font-family-no-duplicate-names */
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
 // Text-level semantics.
-
 abbr[title] {
   border-bottom: 0;
+  // Fallback for browsers that do not support `text-decoration-style`.
   text-decoration: underline;
   text-decoration: underline dotted;
 }
@@ -84,6 +128,7 @@ strong {
 code,
 kbd,
 samp {
+  /* stylelint-disable-next-line font-family-no-duplicate-names */
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -109,7 +154,6 @@ sup {
 }
 
 // Embedded content.
-
 img {
   border-style: none;
   max-width: 100%;
@@ -117,7 +161,6 @@ img {
 }
 
 // Forms
-
 button,
 input,
 optgroup,
@@ -161,7 +204,7 @@ button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
-  outline: 1px dotted $color-danube;
+  outline: 1px dotted $color-ocean-blue;
 }
 
 // Correct the padding in Firefox.
@@ -209,7 +252,6 @@ textarea {
 }
 
 // Interactive.
-
 // Add the correct display in Edge, IE 10+, and Firefox.
 details {
   display: block;
@@ -220,14 +262,12 @@ summary {
 }
 
 // Misc.
-
 // Add the correct display in IE 10+.
 template {
   display: none;
 }
 
 // Lists
-
 // Unset default list margin and padding because if not
 // we'll have to unset it every. single. time.
 ul,
@@ -240,16 +280,4 @@ dl {
 li {
   margin: 0;
   padding: 0;
-}
-
-// Headings are always 'just a bit bigger' than body copy.
-// https://csswizardry.com/2016/02/managing-typography-on-large-apps/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 1.25rem;
-  margin: 0 0 1rem;
 }

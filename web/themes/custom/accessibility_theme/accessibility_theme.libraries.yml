@@ -29,16 +29,93 @@ global:
 #     - accessibility_theme/clearfix
 #     - accessibility_theme/visually-hidden
 
+banner:
+  css:
+    component:
+      dist/css/banner.css: {}
+
 button:
   css:
     component:
       dist/css/button.css: {}
-tabs:
+
+contact:
   css:
     component:
-      dist/css/tabs.css: {}
+      dist/css/contact.css: {}
+
+eyebrow:
+  css:
+    component:
+      dist/css/eyebrow.css: {}
+
+fonts:
+  css:
+    theme:
+      'https://fonts.googleapis.com/css?family=Raleway:400,700': { type: external, minified: true }
+
+footer:
+  css:
+    component:
+      dist/css/footer.css: {}
+
+footer-menu:
+  css:
+    component:
+      dist/css/footer-menu.css: {}
+
+heading:
+  css:
+    component:
+      dist/css/heading.css: {}
+
+hero:
+  css:
+    component:
+      dist/css/hero.css: {}
+
+main-menu:
+  css:
+    component:
+      dist/css/main-menu.css: {}
+
+media-item:
+  css:
+    component:
+      dist/css/media-item.css: {}
+
 message:
   css:
     component:
       dist/css/message.css: {}
 
+site-logo:
+  css:
+    component:
+      dist/css/site-logo.css: {}
+
+tabs:
+  css:
+    component:
+      dist/css/tabs.css: {}
+
+accordion:
+  css:
+    component:
+      dist/css/accordion.css: {}
+  js:
+    dist/js/accordion.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+site-header:
+  css:
+    component:
+      dist/css/site-header.css: {}
+
+50-50-card:
+  css:
+    component:
+      dist/css/50-50-card.css: {}

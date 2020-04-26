@@ -1,0 +1,120 @@
+@import '../../global/utils/init';
+
+.accordion {
+  margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+}
+
+.accordion__title {
+  color: $color-black;
+  margin-bottom: 2rem;
+
+  @include breakpoint($bp-sm) {
+    margin-bottom: 3rem;
+  }
+}
+
+.accordion__item {
+  border: 2px solid $color-ocean-blue;
+  margin-bottom: 0.4rem;
+  // By default collapses accordion items.
+  max-height: 80px;
+  overflow: hidden;
+  transition: max-height $transition;
+
+  // When toggle button is clicked, parent list is expanded.
+  &.is-open {
+    max-height: 100%;
+
+    .icon-chevron__up {
+      transform: rotate(270deg);
+    }
+  }
+}
+
+// Accordion Heading.
+.accordion__item--question {
+  background-color: $color-ocean-blue;
+  color: $color-white;
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 16px 20px 16px 50px;
+  position: relative;
+  text-align: left;
+
+  .icon-chevron {
+    display: block;
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: calc(50% - 10px);
+    transition: transform $transition;
+    width: 20px;
+
+    &.icon-chevron__down {
+      display: block;
+      transform: rotate(90deg);
+
+      .is-open & {
+        display: none;
+      }
+    }
+
+    &.icon-chevron__up {
+      display: none;
+      transform: rotate(270deg);
+
+      .is-open & {
+        display: block;
+      }
+    }
+  }
+
+  .is-open & {
+    background-color: $color-white;
+    color: $color-black;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.accordion__chevron {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+
+.accordion__toggle {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  color: $color-white;
+  cursor: pointer;
+  display: block;
+  padding-left: 0;
+  text-align: left;
+  width: 100%;
+
+  .is-open & {
+    background-color: $color-white;
+    color: $color-black;
+    font-weight: $font-weight-bold;
+  }
+}
+
+// Accordion content.
+.accordion__content {
+  background-color: $color-white;
+  font-weight: $font-weight-light;
+  max-height: 0;
+  padding: 0 20px 0 50px;
+  overflow: hidden;
+  transition: max-height $transition;
+
+  .is-open & {
+    max-height: 100%;
+  }
+}

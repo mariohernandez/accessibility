@@ -1,0 +1,9 @@
+uuid: cab80410-8bec-494b-bf75-caa7508a15a3
+langcode: en
+status: true
+dependencies: {  }
+id: accordion
+label: Accordion
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
